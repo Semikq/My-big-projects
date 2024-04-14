@@ -1,0 +1,186 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+
+
+#one, #three{
+    width: 25vw;
+    height: 100vh;
+}
+
+#two{
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    height: 100vh;
+}
+
+#iphone{
+    background-image: url(imageIphone/trellis.jpg);
+    background-size: cover; /* Розтягне зображення, щоб воно відповідало розміру блоку */
+background-position: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: solid 10px black;
+    border-radius: 40px;
+    width: 400px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#iphone.black-background {
+    background: black;
+}
+
+#header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 3vh;
+}
+
+#main{
+    height: 95vh;
+}
+
+#footer{
+    display: flex;
+    justify-content: center;
+    height: 2vh;
+}
+
+#attributes{
+    width: 24vw;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+#time{
+    width: 24vw;
+    margin: 5px;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+#visor{
+    background-color: black;
+    height: 30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 52vw;
+}
+
+#botton{
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    margin-top: 4px;
+    border-radius: 20px;
+    height: 8px;
+    background-color: black;
+}
+
+#buttomOnOff{
+    position: absolute;
+    height: 70px;
+    border: none;
+    width: 10px;
+    top: 150px;
+    right: -15px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#buttonSoundAdd{
+    position: absolute;
+    height: 50px;
+    border: none;
+    width: 10px;
+    top: 100px;
+    left: -15px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#buttonSoundVolume{
+    position: absolute;
+    height: 50px;
+    border: none;
+    width: 10px;
+    top: 155px;
+    left: -15px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#sound{
+    display: none;
+    background-color: rgb(38, 37, 37);
+    text-align: center;
+    width: 50px;
+    height: 120px;
+    margin-left: 20px;
+    margin-top: 65px;
+    border-radius: 15px;
+}
+
+#iconSound{
+    width:22px;
+    margin-top: 75px;
+    margin-left: 15px;
+    margin-bottom: 8px;
+    position: absolute;
+    z-index: 1; /* встановлюємо порядок відображення, щоб фото було поверх блоків */
+}
