@@ -1,113 +1,151 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+/*! iphone */
 
-body{
-    display: flex;
-    flex-direction: row;
-}
-
-
-
-
-
-
-
-#one, #three{
+#one, #three {
     width: 25vw;
     height: 100vh;
 }
 
-#two{
+#two {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 50vw;
     height: 100vh;
 }
 
-#iphone{
+#iphone {
+    width: 380px;
+    height: 800px;
     background-image: url(imageIphone/trellis.jpg);
-    background-size: cover; /* Розтягне зображення, щоб воно відповідало розміру блоку */
-background-position: center;
+    background-size: cover;
+    background-position: center;
+    border: solid 10px black;
+    border-radius: 40px;
+
     display: flex;
     flex-direction: column;
     position: relative;
-    border: solid 10px black;
-    border-radius: 40px;
-    width: 400px;
-    margin-top: 40px;
-    margin-bottom: 40px;
 }
 
 #iphone.black-background {
     background: black;
 }
 
+/*! iphone */
+
+/*? sound and screen */
+
+#buttonSoundOnOff{
+    position: absolute;
+    height: 40px;
+    border: none;
+    width: 10px;
+    top: 70px;
+    left: -15px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#buttonSoundAdd{
+    position: absolute;
+    height: 50px;
+    border: none;
+    width: 10px;
+    top: 130px;
+    left: -15px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#buttonSoundVolume{
+    position: absolute;
+    height: 50px;
+    border: none;
+    width: 10px;
+    top: 185px;
+    left: -15px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#buttomScreenOnOff{
+    position: absolute;
+    height: 70px;
+    border: none;
+    width: 10px;
+    top: 170px;
+    right: -15px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#sound{
+    display: none;
+    background-color: rgb(38, 37, 37);
+    text-align: center;
+    width: 50px;
+    height: 120px;
+    top: 125px;
+    left: 15px;
+    border-radius: 15px;
+    z-index: 1;
+    position: absolute;
+}
+
+#iconSound{
+    width:22px;
+    margin-top: 75px;
+    margin-left: 15px;
+    margin-bottom: 8px;
+    position: absolute;
+    z-index: 1;
+}
+
+/*? sound and screen */
+
+/*TODO header */
+
 #header{
+    height: 10vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 3vh;
 }
 
-#main{
-    height: 95vh;
-}
-
-#footer{
+.stateSound{
     display: flex;
-    justify-content: center;
-    height: 2vh;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    top: -15px;
+    width: 195px;
+    height: 45px;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 1;
 }
 
-#attributes{
-    width: 24vw;
-    margin: 5px;
-    margin-top: 10px;
+.bell{
+    display: inline-block;
+    width: 25vw;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%235c5c5c' d='M16 7a5.38 5.38 0 0 0-4.46-4.85C11.6 1.46 11.53 0 10 0S8.4 1.46 8.46 2.15A5.38 5.38 0 0 0 4 7v6l-2 2v1h16v-1l-2-2zm-6 13a3 3 0 0 0 3-3H7a3 3 0 0 0 3 3'/%3E%3C/svg%3E");
+}
+
+.mode{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 75vw;
+    gap: 4px;
+    right: 18px;
+    text-align: center;
 }
 
 #time{
-    width: 24vw;
+    width: 23vw;
     margin: 5px;
     text-align: center;
     margin-top: 12px;
@@ -119,68 +157,181 @@ background-position: center;
     height: 30px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    width: 52vw;
+    width: 55vw;
 }
 
-#botton{
+#attributes{
+    gap: 4px;
+    width: 24vw;
+    margin-top: 5px;
+    margin-right: 5px;
     display: flex;
     justify-content: center;
+}
+
+.uil--signal {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M6 15a1 1 0 0 0-1 1v3a1 1 0 0 0 2 0v-3a1 1 0 0 0-1-1m4-3a1 1 0 0 0-1 1v6a1 1 0 0 0 2 0v-6a1 1 0 0 0-1-1m8-8a1 1 0 0 0-1 1v14a1 1 0 0 0 2 0V5a1 1 0 0 0-1-1m-4 4a1 1 0 0 0-1 1v10a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+.material-symbols--wifi-sharp {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m6.35 15.35l-2.1-2.15q1.55-1.55 3.55-2.375T12 10t4.213.838t3.537 2.412l-2.1 2.1q-1.125-1.125-2.588-1.737T12 13t-3.062.613T6.35 15.35M2.1 11.1L0 9q2.375-2.425 5.488-3.713T12 4t6.513 1.288T24 9l-2.1 2.1q-1.975-1.975-4.538-3.037T12 7T6.637 8.063T2.1 11.1M12 21l-3.525-3.55q.7-.7 1.613-1.075T12 16t1.913.375t1.612 1.075z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+.majesticons--battery {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none'%3E%3Cpath fill='%23000' d='M16 6H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m6 7v-2a1 1 0 0 0-1-1v4a1 1 0 0 0 1-1'/%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M16 6H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m6 7v-2a1 1 0 0 0-1-1v4a1 1 0 0 0 1-1'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+/*TODO header */
+
+/*! main */
+
+#main{
+    height: 65vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.blockApp{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content:start;
+    gap: 20px;
     width: 150px;
-    margin-top: 4px;
-    border-radius: 20px;
-    height: 8px;
-    background-color: black;
+    height: 170px;
 }
 
-#buttomOnOff{
-    position: absolute;
-    height: 70px;
-    border: none;
-    width: 10px;
-    top: 150px;
-    right: -15px;
-    border-radius: 10px;
-    background-color: black;
-}
-
-#buttonSoundAdd{
-    position: absolute;
-    height: 50px;
-    border: none;
-    width: 10px;
-    top: 100px;
-    left: -15px;
-    border-radius: 10px;
-    background-color: black;
-}
-
-#buttonSoundVolume{
-    position: absolute;
-    height: 50px;
-    border: none;
-    width: 10px;
-    top: 155px;
-    left: -15px;
-    border-radius: 10px;
-    background-color: black;
-}
-
-#sound{
-    display: none;
-    background-color: rgb(38, 37, 37);
+#gadgets, #clock{
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    width: 50px;
-    height: 120px;
-    margin-left: 20px;
-    margin-top: 65px;
+    width: 150px;
+    height: 140px;
+    background-color: aqua;
+    border-radius: 20px;
+}
+
+.nameApp{
+    position: relative;
+    color: white;
+    bottom: 10px;
+    margin: auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.blockAppMini{
+    width: 60px;
+    height: 60px;
+    background-color: blueviolet;
     border-radius: 15px;
 }
 
-#iconSound{
-    width:22px;
-    margin-top: 75px;
-    margin-left: 15px;
-    margin-bottom: 8px;
-    position: absolute;
-    z-index: 1; /* встановлюємо порядок відображення, щоб фото було поверх блоків */
+.nameAppMini{
+    position: relative;
+    color: white;
+    font-size: 12px;
+    top: 63px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/*! main */
+
+/*? footer */
+
+#footer{
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#buttonSearch{
+    position: relative;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    color: white;
+    justify-content: center;
+    height: 30px;
+    width: 80px;
+    border: none;
+    border-radius: 20px;
+    bottom: -40px;
+    background-color: rgb(176, 171, 171);
+    opacity: 0.9;
+}
+
+.ion--search {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='M456.69 421.39L362.6 327.3a173.81 173.81 0 0 0 34.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 0 0 327.3 362.6l94.09 94.09a25 25 0 0 0 35.3-35.3M97.92 222.72a124.8 124.8 0 1 1 124.8 124.8a124.95 124.95 0 0 1-124.8-124.8'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+#bottonMenu{
+    z-index: 0;
+    width: 360px;
+    height: 95px;
+    align-self: center;
+    background-color: rgb(176, 171, 171);
+    opacity: 0.9;
+    position: absolute;
+    bottom: 9px;
+    border-radius: 25px;
+}
+
+#botton{
+    position: relative;
+    z-index: 1;
+    margin: auto;
+    height: 8px;
+    width: 150px;
+    border: none;
+    border-radius: 20px;
+    background-color: black;
+    bottom: -60px;
+}
+
+/*? footer */

@@ -6,17 +6,17 @@
 
 
 //! On/Off
-const buttomOnOff = document.getElementById("buttomOnOff")
+const buttomScreenOnOff = document.getElementById("buttomScreenOnOff")
 const iphone = document.getElementById("iphone")
 let is = false
 
-buttomOnOff.onclick = screenOnOff
+buttomScreenOnOff.onclick = screenOnOff
 
 function screenOnOff() {
-    if (is === false) {
+    if(is === false){
         iphone.classList.add('black-background')
         is = true
-    } else {
+    }else{
         iphone.classList.remove('black-background')
         is = false
     }
@@ -24,13 +24,56 @@ function screenOnOff() {
 //!
 
 //? Sound
+const buttonSoundOnOff = document.getElementById("buttonSoundOnOff")
+const stateSound = document.createElement("div")
+const bellOn = document.createElement("span")
+const mode = document.createElement("div")
+const slienceMode = document.createElement("p")
+const onOff = document.createElement("p")
+let isSound = false
+let timerState
+stateSound.classList.add("stateSound")
+bellOn.classList.add("bell")
+mode.classList.add("mode")
+slienceMode.innerText = "Slience mode"
+slienceMode.style.color = "gray"
+onOff.style.color = "gainsboro"
+
+buttonSoundOnOff.addEventListener("click", function(){
+    if(isSound === false){
+        stateSound.style.display = "flex"
+        if(timerState){
+            clearTimeout(timerState)
+        }
+        onOff.innerText = ""
+        onOff.innerText = "Enabled"
+        buttonSoundOnOff.style.background = "linear-gradient(90deg, red 50%, black 50%)";
+        document.getElementById("main").append(stateSound)
+        mode.append(slienceMode, onOff)
+        stateSound.append(bellOn, mode)
+        isSound = true
+        timerState = setTimeout(function(){stateSound.style.display = "none"}, 1500)
+    }else if(isSound === true){
+        stateSound.style.display = "flex"
+        if(timerState){
+            clearTimeout(timerState)
+        }
+        onOff.innerText = ""
+        onOff.innerText = "Disabled"
+        buttonSoundOnOff.style.background = "black";
+        document.getElementById("main").append(stateSound)
+        mode.append(slienceMode, onOff)
+        stateSound.append(bellOn, mode)
+        isSound = false
+        timerState = setTimeout(function(){stateSound.style.display = "none"}, 1500)
+    }
+})
+
 const buttonSoundAdd = document.getElementById("buttonSoundAdd")
 const buttonSoundVolume = document.getElementById("buttonSoundVolume")
 const sound = document.getElementById("sound")
 const arrSound = []
 let timerSound
-
-const bebro = document.getElementById("bebro")
 
 buttonSoundAdd.addEventListener("click", function(){
     sound.style.cssText = "display: flex; flex-direction: column-reverse;"

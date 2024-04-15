@@ -3,27 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes iphone</title>
+    <title>Iphone</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="notesIphone.css">
 </head>
 <body>
     <div id="one"></div>
     <div id="two">
         <div id="iphone">
+            <input type="button" id="buttonSoundOnOff">
             <input type="button" id="buttonSoundAdd">
             <input type="button" id="buttonSoundVolume">
+            <input type="button" id="buttomScreenOnOff">
+            <div id="sound"><img src="imageIphone/sound.png" alt="sound" id="iconSound"></div>
             <div id="header">
                 <div id="time"></div>
                 <div id="visor"></div>
-                <div id="attributes"><img src="imageIphone/attributes.png" alt="attributes" width="80px"></img></div>
+                <div id="attributes"><span class="uil--signal"></span><span class="material-symbols--wifi-sharp"></span><span class="majesticons--battery"></span></div>
             </div>
             <div id="main">
-                <div id="sound"><img src="imageIphone/sound.png" alt="sound" id="iconSound"></div>
+                <div class="blockApp"><div id="gadgets"></div><p class="nameApp">Weather</p></div>
+                <div class="blockApp">
+                    <div class="blockAppMini"><p class="nameAppMini">Clock</p></div>
+                    <div class="blockAppMini"><p class="nameAppMini">Weather</p></div>
+                    <div class="blockAppMini"><p class="nameAppMini">Notes</p></div>
+                    <div class="blockAppMini"><p class="nameAppMini">Calendar</p></div>
+                </div>
+                <div class="blockApp">
+                    <div class="blockAppMini"><p class="nameAppMini">Maps</p></div>
+                    <div class="blockAppMini"><p class="nameAppMini">Parameters</p></div>
+                    <div class="blockAppMini"><p class="nameAppMini">Calculator</p></div>
+                    <div class="blockAppMini"><p class="nameAppMini">Safari</p></div>
+                </div>
+                <div class="blockApp"><div id="clock"></div><p class="nameApp">Clock</p></div>
+                <div class="blockApp">
+                    <div class="blockAppMini"><p class="nameAppMini">App Store</p></div>
+                    <div class="blockAppMini"><p class="nameAppMini">Diary</p></div>
+                    <div class="blockAppMini"><p class="nameAppMini">Game1</p></div>
+                    <div class="blockAppMini"><p class="nameAppMini">Game2</p></div>
+                </div>
+                <div class="blockApp">
+                    <div class="blockAppMini"><p class="nameAppMini">Game3</p></div>
+                    <div class="blockAppMini"><p class="nameAppMini">Game4</p></div>
+                </div>
             </div>
             <div id="footer">
-                <div id="botton"></div>
+                <button id="buttonSearch"><span class="ion--search"></span><p>Search</p></button>
+                <div id="bottonMenu"></div>
+                <input type="button" id="botton">
             </div>
-            <input type="button" id="buttomOnOff">
         </div>
     </div>
     <div id="three"></div>
