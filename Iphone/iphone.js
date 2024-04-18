@@ -1,45 +1,28 @@
+//! On/Off display
+const iphone = document.getElementById("iphone")
+const iphoneDisplay = document.getElementById("iphoneDisplay")
+let is = true
 
+document.getElementById("buttomScreenOnOff").onclick = screenOnOff
 
-
-
-
-
-
-//! On/Off
-const iphone = document.getElementById("iphone");
-const main = document.getElementById("main");
-const footer = document.getElementById("footer");
-let is = false;
-
-document.getElementById("buttomScreenOnOff").onclick = screenOnOff;
-
-function screenOnOff() {
-    const elements = [...main.children, ...footer.children]
-    if (is === false) {
-        iphone.classList.add('black-background');
-        elements.forEach(element => {
-            element.style.display = "none";
-        });
-        is = true;
-    } else {
-        iphone.classList.remove('black-background');
-        elements.forEach(element => {
-            element.style.display = "flex";
-        });
-        is = false;
-    }
+function screenOnOff(){
+    iphone.classList.contains('black-background') ? iphone.classList.remove('black-background') : iphone.classList.add('black-background')
+    iphoneDisplay.style.display = is ? "none" : "flex"
+    stateSound.style.display = "none"
+    document.getElementById("sound").style.display = "none"
+    is = !is
 }
-
-//!
+//! On/Off display
 
 //? Sound
+//! Turn sound on or off
 const buttonSoundOnOff = document.getElementById("buttonSoundOnOff")
 const stateSound = document.createElement("div")
 const bell = document.createElement("span")
 const mode = document.createElement("div")
 const slienceMode = document.createElement("p")
 const onOff = document.createElement("p")
-let isSound = false
+let isSound = true
 let timerState
 stateSound.classList.add("stateSound")
 bell.classList.add("bell")
@@ -48,35 +31,25 @@ slienceMode.innerText = "Slience mode"
 slienceMode.style.color = "rgba(130,130,138,255);"
 onOff.style.color = "rgba(178,178,186,255)"
 
-buttonSoundOnOff.addEventListener("click", function(){
-    if(isSound === false){
-        if(timerState){
-            clearTimeout(timerState)
-        }
-        bell.style.backgroundImage = "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"%3E%3Cpath fill=\"%235c5c5c\" d=\"M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2a2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-7 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2\"/%3E%3C/svg%3E')"
-        onOff.innerText = ""
-        onOff.innerText = "Enabled"
-        buttonSoundOnOff.style.background = "linear-gradient(90deg, red 50%, rgb(20, 20, 20) 50%)";
-        document.getElementById("main").append(stateSound)
+function toggleSound(){
+    clearTimeout(timerState)
+    isSound = !isSound
+    bell.style.backgroundImage = isSound ? "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"%3E%3Cpath fill=\"%235c5c5c\" d=\"M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2a2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-7 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2\"/%3E%3C/svg%3E')" : "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"%3E%3Cpath fill=\"%235c5c5c\" d=\"M20.84 22.73L18.11 20H3v-1l2-2v-6c0-1.14.29-2.27.83-3.28L1.11 3l1.28-1.27l19.72 19.73zM19 15.8V11c0-3.1-2.03-5.83-5-6.71V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v.29c-.61.18-1.2.45-1.74.8zM12 23a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2\"/%3E%3C/svg%3E')"
+    onOff.innerText = isSound ? "Enabled" : "Disabled"
+    buttonSoundOnOff.style.background = isSound ? "black" : "linear-gradient(90deg, red 50%, rgb(20, 20, 20) 50%)";
+    if(is === true){
+        stateSound.style.display = "flex"
+        iphone.append(stateSound)
         mode.append(slienceMode, onOff)
         stateSound.append(bell, mode)
-        isSound = true
-        timerState = setTimeout(function(){stateSound.style.display = "none"}, 1500)
-    }else if(isSound === true){
-        if(timerState){
-            clearTimeout(timerState)
-        }
-        bell.style.backgroundImage = "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"%3E%3Cpath fill=\"%235c5c5c\" d=\"M20.84 22.73L18.11 20H3v-1l2-2v-6c0-1.14.29-2.27.83-3.28L1.11 3l1.28-1.27l19.72 19.73zM19 15.8V11c0-3.1-2.03-5.83-5-6.71V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v.29c-.61.18-1.2.45-1.74.8zM12 23a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2\"/%3E%3C/svg%3E')"
-        onOff.innerText = ""
-        onOff.innerText = "Disabled"
-        buttonSoundOnOff.style.background = "black";
-        document.getElementById("main").append(stateSound)
-        mode.append(slienceMode, onOff)
-        stateSound.append(bell, mode)
-        isSound = false
         timerState = setTimeout(function(){stateSound.style.display = "none"}, 1500)
     }
-})
+}
+
+buttonSoundOnOff.addEventListener("click", toggleSound)
+//! Turn sound on or off
+
+//TODO Sound manipulation
 const arrSound = []
 let timerSound
 
@@ -91,11 +64,9 @@ function checkSound(){
 }
 
 document.getElementById("buttonSoundAdd").addEventListener("click", function(){
-    if(is === false){
+    clearTimeout(timerSound);
+    if(is === true){
         document.getElementById("sound").style.cssText = "display: flex; flex-direction: column-reverse;";
-    }
-    if(timerSound){
-        clearTimeout(timerSound);
     }
     if(arrSound.length < 10){
         const block = document.createElement("div");
@@ -112,10 +83,9 @@ document.getElementById("buttonSoundAdd").addEventListener("click", function(){
     checkSound()
 });
 
-
-
 document.getElementById("buttonSoundVolume").addEventListener("click", function(){
-    if(is === false){
+    clearTimeout(timerSound)
+    if(is === true){
         document.getElementById("sound").style.cssText = "display: flex; flex-direction: column-reverse;";
     }
     if(arrSound.length === 1){
@@ -123,16 +93,12 @@ document.getElementById("buttonSoundVolume").addEventListener("click", function(
     }
     let lastBlock = arrSound.pop()
     document.getElementById("sound").removeChild(lastBlock)
-    if(timerSound){
-        clearTimeout(timerSound)
-    }
     timerSound = setTimeout(function(){document.getElementById("sound").style.display = "none"}, 1500)
     checkSound()
 })
-//?
+//TODO Sound manipulation
+//? Sound
 
-
-//TODO Clock
 function updateClock() {
     fetch('https://worldtimeapi.org/api/ip')
     .then(response => response.json())
@@ -145,4 +111,3 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 updateClock()
-//TODO

@@ -1,81 +1,124 @@
 /*! iphone */
-
-#one, #three {
-    width: 25vw;
-    height: 100vh;
-}
-
-#two {
+body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50vw;
     height: 100vh;
 }
 
 #iphone {
-    width: 380px;
-    height: 800px;
+    display: flex;
+    justify-content: center;
+    position: relative;
     background-image: url(imageIphone/trellis.jpg);
     background-size: cover;
     background-position: center;
+    width: 380px;
+    height: 800px;
     border: solid 10px rgb(20, 20, 20);
     border-radius: 40px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
 }
 
 #iphone.black-background {
     background: black;
 }
 
+#visor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 32px;
+    width: 55%;
+    gap: 15px;
+    background-color: rgb(20, 20, 20);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#cameraOne{
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: black;
+}
+
+#speaker{
+    width: 50px;
+    height: 10px;
+    border-radius: 25px;
+    background-color: black;
+}
+
+#cameraTwo{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: black;
+}
 /*! iphone */
 
 /*? sound and screen */
+.buttonExternal{
+    position: absolute;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(20, 20, 20);
+}
 
 #buttonSoundOnOff{
-    position: absolute;
     height: 40px;
-    border: none;
     width: 10px;
     top: 70px;
     left: -15px;
-    border-radius: 10px;
-    background-color: rgb(20, 20, 20);
 }
 
 #buttonSoundAdd{
-    position: absolute;
     height: 50px;
-    border: none;
     width: 10px;
     top: 130px;
     left: -15px;
-    border-radius: 10px;
-    background-color: rgb(20, 20, 20);
 }
 
 #buttonSoundVolume{
-    position: absolute;
     height: 50px;
-    border: none;
     width: 10px;
     top: 185px;
     left: -15px;
-    border-radius: 10px;
-    background-color: rgb(20, 20, 20);
 }
 
 #buttomScreenOnOff{
-    position: absolute;
     height: 70px;
-    border: none;
     width: 10px;
     top: 170px;
     right: -15px;
-    border-radius: 10px;
-    background-color: rgb(20, 20, 20);
+}
+
+.stateSound{
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    width: 195px;
+    height: 45px;
+    top: 45px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.bell{
+    width: 25vw;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.mode{
+    flex-direction: column;
+    position: relative;
+    width: 75vw;
+    gap: 4px;
+    right: 18px;
+    text-align: center;
 }
 
 #sound{
@@ -101,238 +144,155 @@
     bottom: 10px;
     background-repeat: no-repeat;
 }
-
 /*? sound and screen */
 
-/*TODO header */
-
-#header{
-    height: 10vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.stateSound{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    position: absolute;
-    top: -15px;
-    width: 195px;
-    height: 45px;
-    background-color: white;
-    border-radius: 20px;
-    z-index: 1;
-}
-
-.bell{
-    display: inline-block;
-    width: 25vw;
-    height: 22px;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
-.mode{
+/*TODO iphoneDisplay */
+#iphoneDisplay{
     display: flex;
     flex-direction: column;
-    position: relative;
-    width: 75vw;
-    gap: 4px;
-    right: 18px;
-    text-align: center;
+    width: 100%;
+    height: 100%;
 }
 
-#time{
-    width: 23vw;
-    margin: 5px;
-    text-align: center;
-    margin-top: 12px;
-    font-size: 18px;
-}
-
-#visor{
+/*! header */
+header{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    background-color: rgb(20, 20, 20);
-    height: 30px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    width: 55vw;
+    width: 100%;
+    height: 6%;
 }
 
-#cameraOne{
-    width: 15px;
-    height: 15px;
-    border-radius: 100%;
-    background-color: black;
+#time, #attributes{
+    position: relative;
+    user-select: none;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    width: 22.5%;
+    top: 8px;
 }
 
-#speaker{
-    width: 50px;
-    height: 10px;
-    border-radius: 25px;
-    background-color: black;
+#fakeVisor{
+    height: 100%;
+    width: 55%;
 }
 
-#cameraTwo{
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: black;
-}
-
-#attributes{
-    gap: 4px;
-    width: 24vw;
-    margin-top: 5px;
-    margin-right: 5px;
-    display: flex;
-    justify-content: center;
-}
-
-.uil--signal {
+.icon{
     display: inline-block;
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+#signal{
     width: 24px;
     height: 24px;
     --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M6 15a1 1 0 0 0-1 1v3a1 1 0 0 0 2 0v-3a1 1 0 0 0-1-1m4-3a1 1 0 0 0-1 1v6a1 1 0 0 0 2 0v-6a1 1 0 0 0-1-1m8-8a1 1 0 0 0-1 1v14a1 1 0 0 0 2 0V5a1 1 0 0 0-1-1m-4 4a1 1 0 0 0-1 1v10a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1'/%3E%3C/svg%3E");
-    background-color: currentColor;
-    -webkit-mask-image: var(--svg);
-    mask-image: var(--svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-  }
+}
 
-.material-symbols--wifi-sharp {
-    display: inline-block;
+#wifi{
     width: 21px;
     height: 21px;
     --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m6.35 15.35l-2.1-2.15q1.55-1.55 3.55-2.375T12 10t4.213.838t3.537 2.412l-2.1 2.1q-1.125-1.125-2.588-1.737T12 13t-3.062.613T6.35 15.35M2.1 11.1L0 9q2.375-2.425 5.488-3.713T12 4t6.513 1.288T24 9l-2.1 2.1q-1.975-1.975-4.538-3.037T12 7T6.637 8.063T2.1 11.1M12 21l-3.525-3.55q.7-.7 1.613-1.075T12 16t1.913.375t1.612 1.075z'/%3E%3C/svg%3E");
-    background-color: currentColor;
-    -webkit-mask-image: var(--svg);
-    mask-image: var(--svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-  }
+}
 
-.majesticons--battery {
-    display: inline-block;
+#battery{
     width: 24px;
     height: 24px;
     --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none'%3E%3Cpath fill='%23000' d='M16 6H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m6 7v-2a1 1 0 0 0-1-1v4a1 1 0 0 0 1-1'/%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M16 6H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m6 7v-2a1 1 0 0 0-1-1v4a1 1 0 0 0 1-1'/%3E%3C/g%3E%3C/svg%3E");
-    background-color: currentColor;
-    -webkit-mask-image: var(--svg);
-    mask-image: var(--svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-  }
-/*TODO header */
+}
+/*! header */
 
-/*! main */
-
-#main {
-    height: 65vh;
-    position: relative;
+/*? main */
+main{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    gap: 15px;
     flex-wrap: wrap;
+    width: 100%;
+    height: 74%;
 }
 
-.blockAppS {
+.blockApps{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    position: relative;
-    gap: 10px;
+    justify-content: space-between;
     width: 155px;
     height: 175px;
-}
-
-.blockApp {
-    display: flex;
-    flex-wrap: wrap;
     gap: 10px;
-    width: 155px;
-    height: 175px;
 }
 
-#gadgets, #clock {
+#gadgets, #clockBig {
     position: relative;
     display: flex;
     flex-direction: column;
-    bottom: -5px;
-    width: 160px;
-    height: 150px;
+    width: 165px;
+    height: 155px;
     background-color: aqua;
     border-radius: 20px;
 }
 
-.nameApp {
-   
-    color: white;
-    font-size: 12px;
+.blockApp{
+    width: 62px;
+    height: 62px;
+    border-radius: 15px;
+    background-color: aqua;
+    position: relative;
+}
+
+.nameAppBig{
+    position: relative;
+    user-select: none;
+    font-size: 15px;
     margin: auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    bottom: 7px;
 }
 
-.blockAppMini{
-    width: 70px;
-    height: 70px;
-    background-image: url(imageIphone/clock.png);
-    background-size: cover;
-    border-radius: 15px;
-}
-
-.nameAppMini{
+.nameApp{
     position: relative;
-    color: white;
-    font-size: 12px;
-    top: 68px;
+    user-select: none;
     text-align: center;
+    font-size: 15px;
+    top: 65px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+/*? main */
 
-/*! main */
-
-/*? footer */
-
-#footer{
-    height: 45vh;
+/*! footer */
+footer{
     display: flex;
     flex-direction: column;
-    position: relative;
+    justify-content: space-around;
+    width: 100%;
+    height: 20%;
 }
 
 #buttonSearch{
+    display: flex;
     position: relative;
     align-self: center;
-    display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 4px;
-    color: white;
     justify-content: center;
+    color: white;
+    user-select: none;
+    border: none;
+    gap: 4px;
     height: 30px;
     width: 80px;
-    border: none;
     border-radius: 20px;
-    bottom: -45px;
     background-color: rgb(176, 171, 171);
-    opacity: 0.9;
 }
 
-.ion--search {
+#search{
     display: inline-block;
     width: 1em;
     height: 1em;
@@ -347,27 +307,24 @@
   }
 
 #bottonMenu{
-    z-index: 0;
     width: 360px;
     height: 95px;
     align-self: center;
     background-color: rgb(176, 171, 171);
-    opacity: 0.9;
-    position: absolute;
-    bottom: 9px;
     border-radius: 25px;
 }
 
-#botton{
-    position: relative;
+#collapseButton{
+    position: absolute;
+    display: flex;
+    align-self: center;
     z-index: 1;
-    margin: auto;
+    bottom: 8px;
     height: 8px;
     width: 150px;
     border: none;
     border-radius: 20px;
     background-color: black;
-    bottom: -72px;
 }
-
-/*? footer */
+/*! footer */
+/*TODO iphoneDisplay */

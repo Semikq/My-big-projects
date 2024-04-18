@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iphone</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="iphone.css">
+</head>
+<body>
+    <div id="iphone">
+        <input type="button" class="buttonExternal" id="buttomScreenOnOff">
+        <input type="button" class="buttonExternal" id="buttonSoundOnOff">
+        <input type="button" class="buttonExternal" id="buttonSoundAdd">
+        <input type="button" class="buttonExternal" id="buttonSoundVolume">
+        <div id="sound"><span id="iconSound"></span></div>
+        <div id="visor">
+            <div id="cameraOne"></div>
+            <div id="speaker"></div>
+            <div id="cameraTwo"></div>
+        </div>
+        <div id="iphoneDisplay">
+            <header>
+                <div id="time"></div>
+                <div id="fakeVisor"></div>
+                <div id="attributes"><span class="icon" id="signal"></span><span class="icon" id="wifi"></span><span class="icon" id="battery"></span></div>
+            </header>
+            <main>
+                <div class="blockApps">
+                    <div id="gadgets"></div><p class="nameAppBig">Weather</p>
+                </div>
+                <div class="blockApps">
+                    <div class="blockApp" id="clock"><p class="nameApp">Clock</p></div>
+                    <div class="blockApp" id="weather"><p class="nameApp">Weather</p></div>
+                    <div class="blockApp" id="notes"><p class="nameApp">Notes</p></div>
+                    <div class="blockApp" id="calendar"><p class="nameApp">Calendar</p></div>
+                </div>
+                <div class="blockApps">
+                    <div class="blockApp" id="maps"><p class="nameApp">Maps</p></div>
+                    <div class="blockApp" id="parameters"><p class="nameApp">Parameters</p></div>
+                    <div class="blockApp" id="calculator"><p class="nameApp">Calculator</p></div>
+                    <div class="blockApp" id="safari"><p class="nameApp">Safari</p></div>
+                </div>
+                <div class="blockApps">
+                    <div id="clockBig"></div><p class="nameAppBig">Clock</p>
+                </div>
+                <div class="blockApps">
+                    <div class="blockApp" id="music"><p class="nameApp">Music</p></div>
+                    <div class="blockApp" id="diary"><p class="nameApp">Diary</p></div>
+                    <div class="blockApp" id="game1"><p class="nameApp">Game1</p></div>
+                    <div class="blockApp" id="game2"><p class="nameApp">Game2</p></div>
+                </div>
+                <div class="blockApps">
+                    <div class="blockApp" id="game3"><p class="nameApp">Game3</p></div>
+                    <div class="blockApp" id="game4"><p class="nameApp">Game4</p></div>
+                </div>
+            </main>
+            <footer>
+                <button id="buttonSearch"><span id="search"></span><p>Search</p></button>
+                <div id="bottonMenu"></div>
+                <input type="button" id="collapseButton">
+            </footer>
+        </div>
+    </div>
+    <script src="iphone.js"></script>
+</body>
+</html>
