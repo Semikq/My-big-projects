@@ -111,3 +111,133 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 updateClock()
+
+
+
+
+const backCalculator = document.createElement("div")
+const tcalc = document.createElement("div")
+const mcalc = document.createElement("div")
+const bcalc = document.createElement("div")
+backCalculator.classList.add("backCalculator")
+tcalc.classList.add("tcalc")
+mcalc.classList.add("mcalc")
+bcalc.classList.add("bcalc")
+const mArr = [
+    ["clear", "C"],
+    [7, "7"],
+    [4, "4"],
+    [1, "1"],
+    ["+/-", "+/-"],
+    [8, "8"],
+    [5, "5"],
+    [2, "2"],
+    ["%", "%"],
+    [9, "9"],
+    [6, "6"],
+    [3, "3"],
+    ["/", "/"],
+    ["*", "x"],
+    ["-", "-"],
+    ["+", "+"]
+]
+
+const bArr = [
+    [0, "0"],
+    [",", ","],
+    ["=", "="]
+]
+
+
+
+let isApp = false
+
+document.getElementById("calculatorApp").onclick = calculator
+
+function calculator(){
+    if(mcalc.getElementsByClassName("buttonCalc").length === 0){
+        CreateButtonCalculator()
+    }
+    iphoneDisplay.style.display = "none"
+    collapseButton.style.display = "flex"
+    backCalculator.append(tcalc, mcalc, bcalc)
+    iphone.append(backCalculator)
+    isApp = true
+}
+
+function CreateButtonCalculator(){
+    for (const [key, value] of mArr){
+        const buttonCalc = document.createElement("input");
+        buttonCalc.type = "button";
+        buttonCalc.classList.add("buttonCalc");
+        buttonCalc.value = value;
+        buttonCalc.addEventListener("click", function(){
+            resultDisplay(key)
+        })
+        mcalc.appendChild(buttonCalc);
+    }
+
+    for(const [key, value] of bArr){
+        const buttonCalc = document.createElement("input");
+        buttonCalc.type = "button";
+        buttonCalc.value = value;
+        if(key === 0 && value === "0"){
+            buttonCalc.classList.add("zero");
+        }else{
+            buttonCalc.classList.add("buttonCalc");
+        }
+        buttonCalc.addEventListener("click", function(){
+            resultDisplay(key)
+        })
+        bcalc.appendChild(buttonCalc)
+    }
+}
+
+const resultCalc = document.createElement("div")
+resultCalc.classList.add("resultCalc")
+
+let mark  = ""
+let backnum = 0
+
+function resultDisplay(value){
+    resultCalc.innerText += " "
+    if(!isNaN(value)){
+        if(resultCalc.innerText === "0"){
+            resultCalc.innerText = " "
+        }
+        resultCalc.innerText += value
+    }
+    if(value === "clear"){
+        resultCalc.innerText = 0
+    }
+    if(value === "+"){
+        backnum = parseFloat(resultCalc.innerText)
+        resultCalc.innerText = 0
+        mark = "+"
+    }
+    if(value === "="){
+        switch (mark){
+            case "+": resultCalc.innerText = backnum + parseFloat(resultCalc.innerText)
+            break;
+        }
+    }
+    tcalc.append(resultCalc)
+}
+
+
+const collapseButton = document.getElementById("collapseButton")
+
+collapseButton.onclick = collapseButtons
+
+function collapseButtons(){
+    if(isApp === true){
+        // const boxes = document.querySelectorAll("#box");
+        // boxes.forEach(box => {
+        //     box.parentNode.removeChild(box);
+        // });
+        iphone.removeChild(backCalculator)
+        iphoneDisplay.style.display = "flex"
+        collapseButton.style.display = "none"
+        isApp = false
+    }
+}

@@ -316,7 +316,7 @@ footer{
 
 #collapseButton{
     position: absolute;
-    display: flex;
+    display: none;
     align-self: center;
     z-index: 1;
     bottom: 8px;
@@ -324,7 +324,87 @@ footer{
     width: 150px;
     border: none;
     border-radius: 20px;
-    background-color: black;
+    background-color: white;
+}
+
+#collapseButton.black-background {
+    background: black;
 }
 /*! footer */
+
+/*? Calculator */
+
+.backCalculator{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+.tcalc{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.mcalc{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+    height: 50%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.bcalc{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 20%;
+    width: 100%;
+    justify-content: center;
+}
+
+.resultCalc{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: red;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 60px;
+}
+
+.zero{
+    border-radius: 50px;
+    width: 175px;
+    height: 80px;
+    background: blue;
+    font-size: 30px;
+    border: none;
+    color: white;
+    background-color: rgba(52,52,52,255);
+}
+
+.buttonCalc{
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    background: blue;
+    font-size: 30px;
+    border: none;
+    color: white;
+    background-color: rgba(52,52,52,255);
+}
+
+/*? Calculator */
+
 /*TODO iphoneDisplay */
