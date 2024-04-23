@@ -99,6 +99,7 @@ document.getElementById("buttonSoundVolume").addEventListener("click", function(
 //TODO Sound manipulation
 //? Sound
 
+//! Time
 function updateClock() {
     fetch('https://worldtimeapi.org/api/ip')
     .then(response => response.json())
@@ -111,18 +112,25 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 updateClock()
+//! Time
 
-
-
-
+//? Calculator
 const backCalculator = document.createElement("div")
 const tcalc = document.createElement("div")
 const mcalc = document.createElement("div")
 const bcalc = document.createElement("div")
+const resultCalc = document.createElement("div")
+let arrCalc = []
+let sign = false
+let mark = ""
+let numOld = ""
+let isClearCalc = false
+let isPercentCalc = false
 backCalculator.classList.add("backCalculator")
 tcalc.classList.add("tcalc")
 mcalc.classList.add("mcalc")
 bcalc.classList.add("bcalc")
+resultCalc.classList.add("resultCalc")
 const mArr = [
     ["clear", "C"],
     [7, "7"],
@@ -141,38 +149,41 @@ const mArr = [
     ["-", "-"],
     ["+", "+"]
 ]
-
 const bArr = [
     [0, "0"],
-    [",", ","],
+    [".", "."],
     ["=", "="]
 ]
-
-
-
-let isApp = false
-
-document.getElementById("calculatorApp").onclick = calculator
-
-function calculator(){
+document.getElementById("calculatorApp").addEventListener("click", function(){
     if(mcalc.getElementsByClassName("buttonCalc").length === 0){
         CreateButtonCalculator()
     }
     iphoneDisplay.style.display = "none"
     collapseButton.style.display = "flex"
+    resultCalc.addEventListener("click", function(){
+        arrCalc.pop()
+        displayResult()
+    })
+    tcalc.append(resultCalc)
     backCalculator.append(tcalc, mcalc, bcalc)
     iphone.append(backCalculator)
-    isApp = true
-}
-
+    isApp = !isApp
+})
 function CreateButtonCalculator(){
     for (const [key, value] of mArr){
         const buttonCalc = document.createElement("input");
         buttonCalc.type = "button";
-        buttonCalc.classList.add("buttonCalc");
         buttonCalc.value = value;
+        buttonCalc.classList.add("buttonCalc")
+        if(value === "/" || value === "x" || value === "-" || value === "+"){
+            buttonCalc.classList.add("orangeCalc")
+        }else if(value === "C" || value === "+/-" || value === "%"){
+            buttonCalc.classList.add("grayCalc")
+        }else{
+            buttonCalc.classList.add("blackCalc")
+        }
         buttonCalc.addEventListener("click", function(){
-            resultDisplay(key)
+            displayResult(key)
         })
         mcalc.appendChild(buttonCalc);
     }
@@ -184,60 +195,105 @@ function CreateButtonCalculator(){
         if(key === 0 && value === "0"){
             buttonCalc.classList.add("zero");
         }else{
-            buttonCalc.classList.add("buttonCalc");
+            buttonCalc.classList.add("buttonCalc")
+            if(value === "="){
+                buttonCalc.classList.add("orangeCalc")
+            }else{
+                buttonCalc.classList.add("blackCalc");
+            }
         }
         buttonCalc.addEventListener("click", function(){
-            resultDisplay(key)
+            displayResult(key)
         })
         bcalc.appendChild(buttonCalc)
     }
 }
-
-const resultCalc = document.createElement("div")
-resultCalc.classList.add("resultCalc")
-
-let mark  = ""
-let backnum = 0
-
-function resultDisplay(value){
-    resultCalc.innerText += " "
-    if(!isNaN(value)){
-        if(resultCalc.innerText === "0"){
-            resultCalc.innerText = " "
-        }
-        resultCalc.innerText += value
-    }
+function displayResult(value){
     if(value === "clear"){
-        resultCalc.innerText = 0
+        mark = ""
+        arrCalc = []
+        sign = false
+        if(isClearCalc === true){
+            arrCalc = []
+            sign = false
+            mark = ""
+            numOld = 0
+            isClearCalc = false
+        }
+        isClearCalc = true
     }
-    if(value === "+"){
-        backnum = parseFloat(resultCalc.innerText)
-        resultCalc.innerText = 0
-        mark = "+"
+    isClearCalc = false
+
+    if(mark && sign === true){
+        arrCalc = []
+        sign = false
     }
-    if(value === "="){
-        switch (mark){
-            case "+": resultCalc.innerText = backnum + parseFloat(resultCalc.innerText)
+    if(arrCalc.length < 11){
+        if(!isNaN(value)){
+            arrCalc.push(value)
+        }else if(value === "." && !(arrCalc.includes(".")) && arrCalc.length !== 0){
+            arrCalc.push(value)
+        }
+    }
+    if(value === "+/-"){
+        if(arrCalc.length !== 0){
+            if(!(arrCalc.includes("-"))){
+                arrCalc.unshift("-")
+            }else{
+                arrCalc.shift()
+            }
+        }
+    }
+    if(value === "%"){
+        if(arrCalc.length !== 0){
+            if(isPercentCalc === false){
+                arrCalc = ((arrCalc.join("") / 100).toString()).split("")
+                isPercentCalc = true
+            }else if(isPercentCalc === true){
+                arrCalc = ((arrCalc.join("") * 100).toString()).split("")
+                isPercentCalc = false
+            }
+        }
+    }
+    if(arrCalc.length !== 0 || numOld !== 0){
+        if(value === "="){
+            switch (mark){
+                case "+": resultCalc.textContent = numOld + parseFloat(arrCalc.join("")); arrCalc = []; arrCalc.push(resultCalc.textContent);
+                break;
+                case "-": resultCalc.textContent = numOld - parseFloat(arrCalc.join("")); arrCalc = []; arrCalc.push(resultCalc.textContent);
+                break;
+                case "*": resultCalc.textContent = numOld * parseFloat(arrCalc.join("")); arrCalc = []; arrCalc.push(resultCalc.textContent);
+                break;
+                case "/": resultCalc.textContent = numOld / parseFloat(arrCalc.join("")); arrCalc = []; arrCalc.push(resultCalc.textContent);
+                break;
+            }
+        }
+        switch (value){
+            case "+": mark = "+"; sign = true; numOld = parseFloat(resultCalc.textContent); arrCalc = []; isPercentCalc = false;
+            break;
+            case "-": mark = "-"; sign = true; numOld = parseFloat(resultCalc.textContent); arrCalc = []; isPercentCalc = false;
+            break;
+            case "*": mark = "*"; sign = true; numOld = parseFloat(resultCalc.textContent); arrCalc = []; isPercentCalc = false;
+            break;
+            case "/": mark = "/"; sign = true; numOld = parseFloat(resultCalc.textContent); arrCalc = []; isPercentCalc = false;
             break;
         }
     }
-    tcalc.append(resultCalc)
+
+    if(sign === true){
+        resultCalc.textContent = parseFloat(resultCalc.textContent)
+    }else if(value !== "="){
+        resultCalc.textContent = arrCalc.join("")
+    }
 }
+//? Calculator
 
-
-const collapseButton = document.getElementById("collapseButton")
-
-collapseButton.onclick = collapseButtons
-
-function collapseButtons(){
+let isApp = false
+document.getElementById("collapseButton").addEventListener("click", function(){
     if(isApp === true){
-        // const boxes = document.querySelectorAll("#box");
-        // boxes.forEach(box => {
-        //     box.parentNode.removeChild(box);
-        // });
         iphone.removeChild(backCalculator)
         iphoneDisplay.style.display = "flex"
         collapseButton.style.display = "none"
-        isApp = false
+        isApp = !isApp
     }
-}
+})
