@@ -1,0 +1,344 @@
+#container {
+    height: 100%;
+    width: 100%;
+}
+
+#gameContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+/*? Player One */
+
+#containerThree{
+    height: 210px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.activePlayersOne{
+    box-shadow: 0 0 20px 5px rgba(242,127,38,255);
+    background-color: rgba(242,127,38, 0.7);
+}
+
+#containerThree .card{
+    height: 100%;
+    width: 140px;
+    border-radius: 25px;
+    transition: all 0.3s;
+    font-family: cursive;
+    position: absolute;
+}
+
+#containerThree .card.persistent-hover {
+    transform: translateY(-125px);
+}
+
+.contNumber{
+	width: 0;
+	height: 0;
+    font-size: 30px; 
+    position: absolute;
+}
+
+.contNumber:nth-child(1){
+    left: 0;
+    top: 0;
+    border-top: 100px solid black; 
+	border-right: 100px solid transparent;	
+    border-top-left-radius: 23px;
+}
+
+.contNumber:nth-last-child(1){
+    right: 0;
+    bottom: 0;
+	border-bottom: 100px solid black; 
+	border-left: 100px solid transparent;
+    border-bottom-right-radius: 23px;
+}
+
+.contCenter{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 32px;
+}
+
+.contCenter ion-icon{
+    font-size: 46px;
+}
+
+.contNumber:nth-child(1) p.number{
+    font-size: 32px;
+    transform: translate(12px, -88px);
+}
+
+.contNumber:nth-last-child(1) p.number{
+    font-size: 32px;
+    transform: translate(-35px, 55px);
+}
+
+.contNumber:nth-child(1) p.doubleNumber{
+    font-size: 32px;
+    transform: translate(12px, -88px);
+}
+
+.contNumber:nth-last-child(1) p.doubleNumber{
+    font-size: 32px;
+    transform: translate(-42px, 56px);
+}
+
+.contNumber:nth-child(1) ion-icon{
+    font-size: 32px;
+    transform: translate(0px, 0px);
+}
+
+.contNumber:nth-last-child(1) ion-icon{
+    font-size: 32px;
+    transform: translate(-40px, 54px);
+}
+
+.contNumber:nth-last-child(1) p.element {
+    font-size: 32px;
+    transform: translate(-5px, 5px);
+}
+
+.divContainer{
+    height: 100%;
+    width: 140px;
+    background: transparent;
+}
+/*? Player One */
+
+/*! Player Two */
+#containerOne{
+    height: 210px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.activePlayersThree{
+    box-shadow: 0 0 20px 5px rgba(242,127,38,255);
+    background-color: rgba(242,127,38, 0.7);
+}
+
+#containerOne .enemyCard{
+    height: 100%;
+    width: 140px;
+    border: solid 1px rgb(255, 102, 0);
+    background-color: rgb(255, 102, 0);
+    color: rgb(255, 102, 0);
+    border-radius: 25px;
+    position: absolute;
+    transform: rotate(180deg);
+    font-size: 30px; 
+}
+
+.contNumber:nth-child(1) .enemy{
+    transform: translate(18px, -85px);
+}
+
+.contNumber:nth-last-child(1) .enemy{
+    transform: translate(-46px, 55px);
+}
+/*! Player Two */
+
+/*? Field */
+
+#playGround {
+    height: 100%;
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#playGroundContOne{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+#playGroundContTwo{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.centerCard{
+    height: 210px;
+    width: 140px;
+    border-radius: 25px;
+    position: relative;
+    font-family: cursive;
+    background-color: rgb(255, 102, 0);
+    color: rgb(255, 102, 0);
+}
+
+#playGroundContOne .centerCard{
+    transform: translate(-25px, 60px);
+}
+
+#playGroundContTwo .centerCard{
+    transform: translate(25px, -60px);
+}
+
+/*? Field */
+
+/*! Player Three or Four */
+#containerTwo{
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#playerThree{
+    height: 100%;
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.enemyLeftAndRight{
+    height: 140px;
+    width: 100%;
+    border: solid 1px rgb(255, 102, 0);
+    background-color: rgb(255, 102, 0);
+    color: rgb(255, 102, 0);
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-family: cursive;
+}
+
+.contCenter .enemyLeft{
+    transform: rotate(90deg);
+}
+
+.contNumber:nth-child(1) .enemyLeft{
+    transform: translate(15px, -90px) rotate(90deg);
+}
+
+.contNumber:nth-last-child(1) .enemyLeft{
+    transform: translate(-40px, 60px) rotate(90deg);
+}
+
+#playerFour {
+    height: 100%;
+    width: 210px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contCenter .enemyRight{
+    transform: rotate(270deg);
+}
+
+.contNumber:nth-child(1) .enemyRight{
+    transform: translate(10px, -90px) rotate(270deg);
+}
+
+.contNumber:nth-last-child(1) .enemyRight{
+    transform: translate(-40px, 60px) rotate(270deg);
+}
+/*! Player Three or Four */
+
+#blockWin {
+    position: absolute;
+    height: 250px;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    transform: translate(-50%, -300%);
+    border-radius: 25px;
+    border: solid 2px black;
+    box-shadow: 0 0 25px 5px black;
+    display: flex;
+    flex-direction: column;
+    transition: all 1s ease-in-out;
+    z-index: 8;
+}
+
+#blockWin.active{
+    transform: translate(-50%, -50%);
+}
+
+#textWin{
+    height: 55%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#textWin h2{
+    font-size: 28px;
+    border-bottom: solid 1px black;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+#textWin p{
+    font-size: 28px;
+    padding-bottom: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+#textWin p:hover{
+    color: rgb(250, 60, 2);
+}
+
+#blockWin span{
+    height: 1%;
+    width: 50%;
+    transform: translate(50%, -50%);
+    border-top: solid 2px black;
+}
+
+#divBth{
+    height: 44%;
+    width: 100%;
+    text-align: center;
+}
+
+#divBth input{
+    height: 40%;
+    width: 55%;
+    background-color: transparent;
+    border-radius: 40px;
+    margin-top: 10px;
+    font-size: 23px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: solid 2px black;
+    box-shadow: 0 0 40px 2px black;
+    transition: all 0.3s ease-in-out;
+}
+
+#divBth input:hover{
+    box-shadow: 0 0 25px 10px rgba(250, 81, 2, 0.8);
+    background-color: rgb(250, 81, 2);
+}
