@@ -1,0 +1,70 @@
+.containerProducts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.cardsProduct{
+    height: 250px;
+    width: 300px;
+    border: solid 2px black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    box-shadow: 5px 5px 10px 0px black;
+    transition: all ease-in-out 0.2s;
+}
+
+.cardsProduct:hover{
+    box-shadow: 0px 0px 10px 10px white;
+}
+
+.cardsProduct h1{
+    font-size: 22px;
+}
+
+.cardsProduct p {
+    text-align: center;
+    font-size: 18px;
+}
+
+.cardsProduct div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.link{
+    width: 60%;
+}
+
+.cardsProduct input{
+    font-size: 18px;
+    height: 30px;
+    border-radius: 10px;
+    border: solid 1px gray;
+    transition: all ease-in-out 0.2s;
+}
+
+.cardsProduct input:hover{
+    border: solid 1px green;
+    background-color: green;
+    color: greenyellow;
+}
+
+.cardsProduct input:nth-child(1){
+    width: 100%;
+}
+
+.cardsProduct input:nth-child(2){
+    width: 20%;
+}

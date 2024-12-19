@@ -1,0 +1,64 @@
+.containerAuthorization{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.logIn{
+    height: 450px;
+    width: 350px;
+    border: solid 2px black;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 5px 5px 10px 0px black;
+    transition: all ease-in-out 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.logIn h2{
+    height: 8%;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    font-size: 22px;
+    border-bottom: solid 2px black;
+    box-sizing: border-box;
+}
+
+.logIn .attributes{
+    display: flex;
+    flex-direction: column;
+    height: 72%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.logIn .attributes input{
+    height: 40px;
+    width: 82%;
+    border-radius: 20px;
+    font-size: 16px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.logIn .register{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logIn .register input{
+    height: 35px;
+    width: 40%;
+    border-radius: 20px;
+    font-size: 16px;
+}

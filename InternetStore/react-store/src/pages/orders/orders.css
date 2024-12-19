@@ -1,0 +1,43 @@
+.OrdersField{
+    background-color: white;
+    height: 75%;
+    width: 90%;
+    border-radius: 20px;
+    border: solid 2px black;
+    box-shadow: 5px 5px 10px 0px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    gap: 20px;
+    padding: 20px 0;
+    overflow-y: auto;
+    max-width: 1200px;
+}
+
+.OrdersField h1{
+    font-size: 18px;
+}
+
+.OrdersField .containerInputs{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.OrdersField div input{
+    height: 80%;
+    width: 30%;
+    border-radius: 20px;
+    border: solid 1px black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.OrdersField input:hover{
+    border: solid 1px green;
+    background-color: green;
+    color: greenyellow;
+}

@@ -1,0 +1,65 @@
+.productsField{
+    height: 100%;
+    width: 100%;
+}
+
+.productsField .categories{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.productsField .categories select{
+    height: 40%;
+    width: 75%;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 20px;
+    border: solid 2px black;
+}
+
+.productsField .products{
+    height: 85%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cardProduct{
+    height: 250px;
+    width: 300px;
+    border: solid 2px black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    box-shadow: 5px 5px 10px 0px black;
+    transition: all ease-in-out 0.2s;
+}
+
+.cardProduct input{
+    font-size: 18px;
+    height: 30px;
+    width: 50%;
+    border-radius: 10px;
+    border: solid 1px gray;
+    transition: all ease-in-out 0.2s;
+    text-align: center;
+}
+
+.cardProduct input:hover{
+    border: solid 1px green;
+    background-color: green;
+    color: greenyellow;
+}
+
+.cardProduct input:nth-child(1),
+.cardProduct input:nth-child(2){
+    width: 80%;
+}

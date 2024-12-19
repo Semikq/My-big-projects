@@ -1,0 +1,96 @@
+header{
+    height: 5%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    font-size: 24px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .linkMenu {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px black;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+header .linkMenu:hover{
+    background-color: green;
+    border: solid 1px greenyellow;
+}
+
+.bottom-menu {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: grey;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    animation: slideIn 0.3s ease-in-out;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.bottom-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+.bottom-menu a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.right-menu {
+    position: absolute;            
+    top: 100%;                       
+    right: 0;                        
+    width: 290px;                    
+    height: 350px;                   
+    background-color: grey;         
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.3); 
+    padding: 20px;                  
+    box-sizing: border-box;          
+    display: flex;
+    flex-direction: column;          
+    transition: transform 0.3s ease-in-out;  
+    border-bottom-left-radius: 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.right-menu a {
+    text-decoration: none;
+}
+
+.right-menu p {
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.right-menu p:hover{
+    color: blue;
+}
